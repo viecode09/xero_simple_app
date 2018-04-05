@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contact_id: 1
+  xero_invoice_id: MyString
+  description: MyText
+  unit_amount: MyString
+  quantity: 1
+  account_code: 1
+  due_date: 2018-04-05 14:03:53
+
+two:
+  contact_id: 1
+  xero_invoice_id: MyString
+  description: MyText
+  unit_amount: MyString
+  quantity: 1
+  account_code: 1
+  due_date: 2018-04-05 14:03:53

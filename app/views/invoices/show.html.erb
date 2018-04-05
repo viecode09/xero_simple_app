@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @invoice.contact_id %>
+</p>
+
+<p>
+  <strong>Xero invoice:</strong>
+  <%= @invoice.xero_invoice_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @invoice.description %>
+</p>
+
+<p>
+  <strong>Unit amount:</strong>
+  <%= @invoice.unit_amount %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @invoice.quantity %>
+</p>
+
+<p>
+  <strong>Account code:</strong>
+  <%= @invoice.account_code %>
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @invoice.due_date %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>

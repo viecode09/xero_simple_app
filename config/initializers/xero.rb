@@ -1,0 +1,1 @@
+$xero_client = Xeroizer::PrivateApplication.new(ENV["XERO_CONSUMER_KEY"], ENV["XERO_CONSUMER_SECRET"], "#{Rails.root}/config/privatekey.pem")

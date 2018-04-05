@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Addresses</th>
+      <th>Phones</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.name %></td>
+        <td><%= contact.first_name %></td>
+        <td><%= contact.last_name %></td>
+        <td><%=raw contact.addresses.map{|i| "#{i.type}: #{i.line1} #{i.city}" }.join("<br />") %></td>
+        <td><%=raw contact.phones.map{|i| "#{i.area_code} #{i.number} (#{i.type})" if i.number.present? }.compact.join(",") %></td>
+        <% if Invoice.find_by_contact_id(contact.id) %>
+          <td><%= link_to "Show Invoice", "/contacts/#{contact.id}/invoices" %></td>
+        <% else %>
+          <td><%= link_to "Create Invoice", new_contact_invoice_path(contact.id) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact', new_contact_path %>
